@@ -32,3 +32,5 @@
 .\objects\main.o: .\GD32_Hal\Include\gd32f30x_misc.h
 .\objects\main.o: .\GD32_Hal\Include\gd32f30x_enet.h
 .\objects\main.o: .\GD32_Hal\Include\gd32f30x_exmc.h
+.\objects\main.o: .\Driver\led_drv.h
+.\objects\main.o: .\Driver\systick.h

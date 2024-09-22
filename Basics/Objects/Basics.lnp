@@ -1,5 +1,8 @@
 --cpu=Cortex-M4.fp.sp
 ".\objects\main.o"
+".\objects\led_drv.o"
+".\objects\key_drv.o"
+".\objects\systick.o"
 ".\objects\gd32f30x_gpio.o"
 ".\objects\gd32f30x_misc.o"
 ".\objects\gd32f30x_rcu.o"

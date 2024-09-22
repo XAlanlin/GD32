@@ -393,6 +393,23 @@
         </Group>
         <Group>
           <GroupName>Driver</GroupName>
+          <Files>
+            <File>
+              <FileName>led_drv.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Driver\led_drv.c</FilePath>
+            </File>
+            <File>
+              <FileName>key_drv.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Driver\key_drv.c</FilePath>
+            </File>
+            <File>
+              <FileName>systick.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Driver\systick.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>GD32_Hal</GroupName>
