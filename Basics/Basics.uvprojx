@@ -409,6 +409,11 @@
               <FileType>1</FileType>
               <FilePath>.\Driver\systick.c</FilePath>
             </File>
+            <File>
+              <FileName>usb_drv.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Driver\usb_drv.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

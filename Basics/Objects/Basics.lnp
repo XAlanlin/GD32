@@ -3,6 +3,7 @@
 ".\objects\led_drv.o"
 ".\objects\key_drv.o"
 ".\objects\systick.o"
+".\objects\usb_drv.o"
 ".\objects\gd32f30x_gpio.o"
 ".\objects\gd32f30x_misc.o"
 ".\objects\gd32f30x_rcu.o"

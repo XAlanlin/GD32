@@ -135,6 +135,7 @@ I (.\GD32_Hal\Include\gd32f30x_wwdgt.h)(0x62A6E3C7)
 I (.\GD32_Hal\Include\gd32f30x_misc.h)(0x61CC215B)
 I (.\GD32_Hal\Include\gd32f30x_enet.h)(0x62A6E3C7)
 I (.\GD32_Hal\Include\gd32f30x_exmc.h)(0x61CC215C)
+F (.\Driver\usb_drv.c)(0x66F18CFC)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections -I .\App -I .\Arm -I .\Driver -I .\GD32_Hal\Include -I .\GD32_Hal-ID:\KEIL\keil\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="538" -DGD32F30X_HD-o .\objects\usb_drv.o --omf_browse .\objects\usb_drv.crf --depend .\objects\usb_drv.d)
 F (.\GD32_Hal\Source\gd32f30x_gpio.c)(0x61CC215B)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections -I .\App -I .\Arm -I .\Driver -I .\GD32_Hal\Include -I .\GD32_Hal-ID:\KEIL\keil\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="538" -DGD32F30X_HD-o .\objects\gd32f30x_gpio.o --omf_browse .\objects\gd32f30x_gpio.crf --depend .\objects\gd32f30x_gpio.d)
 I (.\GD32_Hal\Include\gd32f30x_gpio.h)(0x6392DB4B)
 I (.\Arm\gd32f30x.h)(0x61CC215C)
