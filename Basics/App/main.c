@@ -5,13 +5,14 @@
 #include "key_drv.h"
 #include "systick.h"
 #include "usb_drv.h"
-
+#include "usbAPP.h"
 int main(void)
 {	
 	SystickInit();
 	LedDrvInit();
 	KeyDrvInit();
 	UsbDrvInit();
+	usbAppInit();
 	
 	while (1)
 	{

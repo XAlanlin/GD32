@@ -34,4 +34,3 @@
 .\objects\usb_drv.o: .\GD32_Hal\Include\gd32f30x_misc.h
 .\objects\usb_drv.o: .\GD32_Hal\Include\gd32f30x_enet.h
 .\objects\usb_drv.o: .\GD32_Hal\Include\gd32f30x_exmc.h
-.\objects\usb_drv.o: Driver\led_drv.h

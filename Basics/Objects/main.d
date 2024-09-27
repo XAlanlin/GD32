@@ -37,3 +37,4 @@
 .\objects\main.o: .\Driver\key_drv.h
 .\objects\main.o: .\Driver\systick.h
 .\objects\main.o: .\Driver\usb_drv.h
+.\objects\main.o: App\usbAPP.h
