@@ -36,3 +36,4 @@
 .\objects\usbapp.o: .\GD32_Hal\Include\gd32f30x_enet.h
 .\objects\usbapp.o: .\GD32_Hal\Include\gd32f30x_exmc.h
 .\objects\usbapp.o: .\Driver\usb_drv.h
+.\objects\usbapp.o: .\Driver\queue.h

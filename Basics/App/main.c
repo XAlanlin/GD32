@@ -6,14 +6,23 @@
 #include "systick.h"
 #include "usb_drv.h"
 #include "usbAPP.h"
-int main(void)
-{	
+
+void driverInit(void)
+{
 	SystickInit();
 	LedDrvInit();
 	KeyDrvInit();
 	UsbDrvInit();
+}
+void appInit(void)
+{
 	usbAppInit();
-	
+}
+
+int main(void)
+{	
+  driverInit();
+  appInit();
 	while (1)
 	{
 		UsbTask();

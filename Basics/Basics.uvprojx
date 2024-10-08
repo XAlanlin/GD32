@@ -419,6 +419,11 @@
               <FileType>1</FileType>
               <FilePath>.\Driver\usb_drv.c</FilePath>
             </File>
+            <File>
+              <FileName>queue.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Driver\queue.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

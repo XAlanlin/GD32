@@ -1,6 +1,6 @@
 Dependencies for Project 'Basics', Target 'Basics': (DO NOT MODIFY !)
 CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
-F (.\App\main.c)(0x66F66DF0)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections -I .\App -I .\Arm -I .\Driver -I .\GD32_Hal\Include -I .\GD32_Hal-ID:\KEIL\keil\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="538" -DGD32F30X_HD-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (.\App\main.c)(0x66F966E1)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections -I .\App -I .\Arm -I .\Driver -I .\GD32_Hal\Include -I .\GD32_Hal-ID:\KEIL\keil\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="538" -DGD32F30X_HD-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (D:\KEIL\keil\ARM\ARMCC\include\stdint.h)(0x5F63877C)
 I (D:\KEIL\keil\ARM\ARMCC\include\stdio.h)(0x5F63877C)
 I (.\Arm\gd32f30x.h)(0x61CC215C)
@@ -39,7 +39,7 @@ I (.\Driver\key_drv.h)(0x66EFE4CA)
 I (.\Driver\systick.h)(0x66EFE2B9)
 I (.\Driver\usb_drv.h)(0x66F66C66)
 I (App\usbAPP.h)(0x66F66C66)
-F (.\App\usbAPP.c)(0x66F66C66)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections -I .\App -I .\Arm -I .\Driver -I .\GD32_Hal\Include -I .\GD32_Hal-ID:\KEIL\keil\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="538" -DGD32F30X_HD-o .\objects\usbapp.o --omf_browse .\objects\usbapp.crf --depend .\objects\usbapp.d)
+F (.\App\usbAPP.c)(0x67055458)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections -I .\App -I .\Arm -I .\Driver -I .\GD32_Hal\Include -I .\GD32_Hal-ID:\KEIL\keil\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="538" -DGD32F30X_HD-o .\objects\usbapp.o --omf_browse .\objects\usbapp.crf --depend .\objects\usbapp.d)
 I (D:\KEIL\keil\ARM\ARMCC\include\stdint.h)(0x5F63877C)
 I (D:\KEIL\keil\ARM\ARMCC\include\stdio.h)(0x5F63877C)
 I (D:\KEIL\keil\ARM\ARMCC\include\stdbool.h)(0x5F63877C)
@@ -76,6 +76,7 @@ I (.\GD32_Hal\Include\gd32f30x_misc.h)(0x61CC215B)
 I (.\GD32_Hal\Include\gd32f30x_enet.h)(0x62A6E3C7)
 I (.\GD32_Hal\Include\gd32f30x_exmc.h)(0x61CC215C)
 I (.\Driver\usb_drv.h)(0x66F66C66)
+I (.\Driver\queue.h)(0x670550FA)
 F (.\Driver\led_drv.c)(0x66EFC1BA)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections -I .\App -I .\Arm -I .\Driver -I .\GD32_Hal\Include -I .\GD32_Hal-ID:\KEIL\keil\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="538" -DGD32F30X_HD-o .\objects\led_drv.o --omf_browse .\objects\led_drv.crf --depend .\objects\led_drv.d)
 I (D:\KEIL\keil\ARM\ARMCC\include\stdint.h)(0x5F63877C)
 I (.\Arm\gd32f30x.h)(0x61CC215C)
@@ -211,6 +212,9 @@ I (.\GD32_Hal\Include\gd32f30x_wwdgt.h)(0x62A6E3C7)
 I (.\GD32_Hal\Include\gd32f30x_misc.h)(0x61CC215B)
 I (.\GD32_Hal\Include\gd32f30x_enet.h)(0x62A6E3C7)
 I (.\GD32_Hal\Include\gd32f30x_exmc.h)(0x61CC215C)
+F (.\Driver\queue.c)(0x670550F6)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections -I .\App -I .\Arm -I .\Driver -I .\GD32_Hal\Include -I .\GD32_Hal-ID:\KEIL\keil\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="538" -DGD32F30X_HD-o .\objects\queue.o --omf_browse .\objects\queue.crf --depend .\objects\queue.d)
+I (D:\KEIL\keil\ARM\ARMCC\include\stdint.h)(0x5F63877C)
+I (Driver\queue.h)(0x670550FA)
 F (.\GD32_Hal\Source\gd32f30x_gpio.c)(0x61CC215B)(--c99 --gnu -c --cpu Cortex-M4.fp.sp -g -O0 --apcs=interwork --split_sections -I .\App -I .\Arm -I .\Driver -I .\GD32_Hal\Include -I .\GD32_Hal-ID:\KEIL\keil\GigaDevice\GD32F30x_DFP\2.2.1\Device\Include-D__UVISION_VERSION="538" -DGD32F30X_HD-o .\objects\gd32f30x_gpio.o --omf_browse .\objects\gd32f30x_gpio.crf --depend .\objects\gd32f30x_gpio.d)
 I (.\GD32_Hal\Include\gd32f30x_gpio.h)(0x6392DB4B)
 I (.\Arm\gd32f30x.h)(0x61CC215C)

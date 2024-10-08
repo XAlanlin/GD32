@@ -3,6 +3,7 @@
 #include <stdbool.h>
 #include "led_drv.h"
 #include "usb_drv.h"
+#include "queue.h"
 
 /**
 ***********************************************************************
@@ -10,16 +11,16 @@
         0x55   0xAA    0x03      0x06     0x00     0x01      0xFB
 ***********************************************************************
 */
-#define FRAME_HEAD_0        0x55  
-#define FRAME_HEAD_1        0xAA
-#define CTRL_DATA_LEN       3     //数据域长度
-#define PACKET_DATA_LEN     (CTRL_DATA_LEN + 4)  //包长度
-#define FUNC_DATA_IDX       3     //功能字数组下标
-#define LED_CTRL_CODE       0x06  //功能字
+#define FRAME_HEAD_0           0x55  
+#define FRAME_HEAD_1           0xAA
+#define PACKET_DATA_LEN_MIN    7                  //最小包长度
+#define PACKET_DATA_LEN_MAX    11                 //最大包长度
+#define FUNC_DATA_IDX          3                  //功能字数组下标
+#define LED_CTRL_CODE          0x06  
 
-#define MAX_BUF_SIZE 20
+#define MAX_BUF_SIZE 77
 static uint8_t g_rcvDataBuf[MAX_BUF_SIZE];
-static bool g_pktRcvd = false;
+static QueueType_t g_rcvQueue;
 
 typedef struct
 {
@@ -29,30 +30,7 @@ typedef struct
 
 static void ProcUartData(uint8_t data)
 {
-	static uint8_t index = 0;
-	g_rcvDataBuf[index++] = data;
-	
-	switch (index)
-	{
-		case 1:
-			if (g_rcvDataBuf[0] != FRAME_HEAD_0)
-			{
-				index = 0;
-			}
-			break;
-		case 2:
-			if (g_rcvDataBuf[1] != FRAME_HEAD_1)
-			{
-				index = 0;
-			}
-			break;
-		case PACKET_DATA_LEN:
-			g_pktRcvd = true;
-			index = 0;
-			break;
-		default:
-			break;
-	}
+	QueuePush(&g_rcvQueue, data);
 }
 
 /**
@@ -94,19 +72,40 @@ static void CtrlLed(LedCtrlInfo_t *ctrlData)
 */
 void UsbTask(void)
 {
-	if (!g_pktRcvd)
-	{
-		return;
-	}
-	g_pktRcvd = false;
+	uint8_t readBuf[PACKET_DATA_LEN_MAX] = {0};
 	
-	if (CalXorSum(g_rcvDataBuf, PACKET_DATA_LEN - 1) != g_rcvDataBuf[PACKET_DATA_LEN - 1])
+	while (QueuePop(&g_rcvQueue, &readBuf[0]) == QUEUE_OK)
 	{
-		return;
-	}
-	if (g_rcvDataBuf[FUNC_DATA_IDX] == LED_CTRL_CODE)
-	{
-		CtrlLed((LedCtrlInfo_t *)(&g_rcvDataBuf[FUNC_DATA_IDX + 1]));
+		if (readBuf[0] != FRAME_HEAD_0)
+		{
+			continue;
+		}
+		if ((QueuePop(&g_rcvQueue, &readBuf[1]) == QUEUE_EMPTY) || (readBuf[1] != FRAME_HEAD_1))
+		{
+			continue;
+		}
+		if ((QueuePop(&g_rcvQueue, &readBuf[2]) == QUEUE_EMPTY) || (readBuf[2] > PACKET_DATA_LEN_MAX))
+	    {
+			continue;
+		}
+		if (QueuePopArray(&g_rcvQueue, &readBuf[3], readBuf[2] + 1) != readBuf[2] + 1)
+		{
+			continue;
+		}
+		if (CalXorSum(readBuf, readBuf[2] + 3) != readBuf[readBuf[2] + 3])
+		{
+			continue;
+		}
+		if (readBuf[FUNC_DATA_IDX] == LED_CTRL_CODE)
+		{
+			CtrlLed((LedCtrlInfo_t *)(&readBuf[FUNC_DATA_IDX + 1]));
+		}
+		
+		for (uint32_t i = 0; i < readBuf[2] + 4; i++)
+		{
+			printf("%02x ", readBuf[i]);
+		}
+		printf("\n");
 	}
 }
 
@@ -119,4 +118,5 @@ void UsbTask(void)
 void usbAppInit(void)
 {
 	regUsb2ComCb(ProcUartData);
+	QueueInit(&g_rcvQueue, g_rcvDataBuf,MAX_BUF_SIZE);
 }
