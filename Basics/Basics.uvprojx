@@ -390,9 +390,14 @@
               <FilePath>.\App\main.c</FilePath>
             </File>
             <File>
-              <FileName>usbAPP.c</FileName>
+              <FileName>Hmi_App.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\App\usbAPP.c</FilePath>
+              <FilePath>.\App\Hmi_App.c</FilePath>
+            </File>
+            <File>
+              <FileName>usb_APP.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\App\usb_APP.c</FilePath>
             </File>
           </Files>
         </Group>

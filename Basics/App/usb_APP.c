@@ -17,8 +17,8 @@
 #define PACKET_DATA_LEN_MAX    11                 //最大包长度
 #define FUNC_DATA_IDX          3                  //功能字数组下标
 #define LED_CTRL_CODE          0x06  
-
 #define MAX_BUF_SIZE 77
+
 static uint8_t g_rcvDataBuf[MAX_BUF_SIZE];
 static QueueType_t g_rcvQueue;
 

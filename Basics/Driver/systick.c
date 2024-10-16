@@ -3,6 +3,19 @@
 
 uint64_t g_sysRunTime = 0;
 
+static void (*g_pTaskSchduleFunc)(void);
+
+/**
+***********************************************************
+* @brief 注册任务调度回调函数
+* @param pFunc,传入回调函数地址
+* @return 
+***********************************************************
+*/
+void TaskScheduleCbReg(void (*pFunc)(void))
+{
+	g_pTaskSchduleFunc = pFunc;
+}
 /**
 ***********************************************************
 * @brief systick初始化
@@ -28,6 +41,7 @@ void SystickInit(void)
 void SysTick_Handler(void)
 {
 	g_sysRunTime ++;
+	g_pTaskSchduleFunc();
 
 }
 /**

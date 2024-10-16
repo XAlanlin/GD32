@@ -1,6 +1,7 @@
 --cpu=Cortex-M4.fp.sp
 ".\objects\main.o"
-".\objects\usbapp.o"
+".\objects\hmi_app.o"
+".\objects\usb_app.o"
 ".\objects\led_drv.o"
 ".\objects\key_drv.o"
 ".\objects\systick.o"

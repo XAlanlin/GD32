@@ -1,5 +1,5 @@
-#ifndef USBAPP_H_
-#define USBAPP_H_
+#ifndef USB_APP_H_
+#define USB_APP_H_
 
 
 /**

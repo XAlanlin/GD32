@@ -1,6 +1,7 @@
 .\objects\main.o: App\main.c
 .\objects\main.o: D:\KEIL\keil\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\main.o: D:\KEIL\keil\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\main.o: .\Driver\led_drv.h
 .\objects\main.o: .\Arm\gd32f30x.h
 .\objects\main.o: .\Arm\core_cm4.h
 .\objects\main.o: .\Arm\core_cmInstr.h
@@ -33,8 +34,8 @@
 .\objects\main.o: .\GD32_Hal\Include\gd32f30x_misc.h
 .\objects\main.o: .\GD32_Hal\Include\gd32f30x_enet.h
 .\objects\main.o: .\GD32_Hal\Include\gd32f30x_exmc.h
-.\objects\main.o: .\Driver\led_drv.h
 .\objects\main.o: .\Driver\key_drv.h
 .\objects\main.o: .\Driver\systick.h
 .\objects\main.o: .\Driver\usb_drv.h
-.\objects\main.o: App\usbAPP.h
+.\objects\main.o: App\usb_APP.h
+.\objects\main.o: App\Hmi_App.h
